@@ -3,10 +3,12 @@ const WeatherSummary = require('../models/WeatherSummary');
 const Alert = require('../models/Alert');
 const dotenv = require('dotenv');
 
-const API_KEY = '93f60701d7eb35b2b3fe49aab386ead5';
+dotenv.config();
+
+const API_KEY = process.env.OPENWEATHERMAP_API_KEY;
+
 const CITIES = ['Delhi', 'Mumbai', 'Chennai', 'Bangalore', 'Kolkata', 'Hyderabad'];
 const FETCH_INTERVAL = 5* 60* 1000; // 5 minutes
-dotenv.config();
 
 let temperatureThreshold = 40;
 let conditionThreshold = 'Rain';
